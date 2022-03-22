@@ -1,0 +1,4 @@
+C:\Users\tangshu>curl -u nikolai:12345 http://localhost:8080/sell
+[{"name":"beer","owner":"nikolai"},{"name":"candy","owner":"nikolai"}]
+C:\Users\tangshu>curl -u julien:12345  http://localhost:8080/sell
+[{"name":"chocolate","owner":"julien"}]
