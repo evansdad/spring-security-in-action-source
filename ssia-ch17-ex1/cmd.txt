@@ -1,4 +1,4 @@
-C:\Users\tangshu>curl -u nikolai:12345 http://localhost:8080/sell
-[{"name":"beer","owner":"nikolai"},{"name":"candy","owner":"nikolai"}]
-C:\Users\tangshu>curl -u julien:12345  http://localhost:8080/sell
-[{"name":"chocolate","owner":"julien"}]
+C:\Users\tangshu>curl -u user:20b43f5e-b0db-44b8-ab87-5f881fb02b56 http://localhost:8080/hello
+Hello!
+C:\Users\tangshu>curl http://localhost:8080/hello
+{"timestamp":"2022-03-23T03:07:34.014+00:00","status":401,"error":"Unauthorized","message":"","path":"/hello"}
