@@ -1,1 +1,2 @@
-C:\Users\tangshu>curl -u nikolai:12345 http://localhost:8080/sell
+C:\Users\tangshu>curl -u user:f565d08b-7ea4-4155-865b-759b9bfbe2c5 http://localhost:8080/hello
+Hello!

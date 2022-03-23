@@ -26,7 +26,7 @@ public class HelloController {
 //        SecurityContext context = SecurityContextHolder.getContext();
 //        Authentication a = context.getAuthentication();
 
-        return "Hello, " + a.getName() + "!";
+          return "Hello, " + a.getName() + "!";
     }
 
     @GetMapping("/bye")
