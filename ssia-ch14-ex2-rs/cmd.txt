@@ -1,0 +1,28 @@
+curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
+curl -H "Authorization:Bearer 5e0a11b7-cc74-449f-9e00-78610c6ee509" "http://localhost:9090/hello"
+
+C:\Users\tangshu>curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+* Server auth using Basic with user 'client'
+> POST /oauth/token?grant_type=password&username=john&password=12345&scope=read HTTP/1.1
+> Host: localhost:8080
+> Authorization: Basic Y2xpZW50OnNlY3JldA==
+> User-Agent: curl/7.79.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< Cache-Control: no-store
+< Pragma: no-cache
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< X-Frame-Options: DENY
+< Content-Type: application/json;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Thu, 24 Mar 2022 08:56:28 GMT
+<
+{"access_token":"5e0a11b7-cc74-449f-9e00-78610c6ee509","token_type":"bearer","refresh_token":"c8d737b8-46c2-4569-be1c-aa41d4526355","expires_in":43199,"scope":"read"}* Connection #0 to host localhost left intact
+
+C:\Users\tangshu>curl -H "Authorization:Bearer 5e0a11b7-cc74-449f-9e00-78610c6ee509" "http://localhost:9090/hello"
+Hello!
