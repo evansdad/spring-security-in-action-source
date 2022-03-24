@@ -1,0 +1,5 @@
+curl -XPOST -H "content-type: application/json" -d "{\"username\":\"danielle\",\"password\":\"12345\"}" http://localhost:8080/user/add
+curl -XPOST -H "content-type: application/json" -d "{\"username\":\"danielle\",\"password\":\"12345\"}" http://localhost:8080/user/auth
+curl -v -XPOST -H "content-type: application/json" -d "{\"username\":\"danielle\",\"code\":\"6046\"}" http://localhost:8080/otp/check    6046需要查看数据库
+curl -v -XPOST -H "content-type: application/json" -d "{\"username\":\"danielle\",\"code\":\"8888\"}" http://localhost:8080/otp/check
+

@@ -1,0 +1,32 @@
+curl -H "username:danielle" -H "password:12345" http://localhost:9090/login
+curl -v -H "username:danielle" -H "code:4565" http://localhost:9090/login
+curl -H "Authorization:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImRhbmllbGxlIn0.umxQ98tgEq8GKa7J2njjF7RMNtlWjIDfmwHQtAHGFmc" http://localhost:9090/test
+
+C:\Users\tangshu>curl -H "username:danielle" -H "password:12345" http://localhost:9090/login
+C:\Users\tangshu>curl -v -H "username:danielle" -H "code:4565" http://localhost:9090/login
+*   Trying 127.0.0.1:9090...
+* Connected to localhost (127.0.0.1) port 9090 (#0)
+> GET /login HTTP/1.1
+> Host: localhost:9090
+> User-Agent: curl/7.79.1
+> Accept: */*
+> username:danielle
+> code:4565
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImRhbmllbGxlIn0.umxQ98tgEq8GKa7J2njjF7RMNtlWjIDfmwHQtAHGFmc
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Length: 0
+< Date: Thu, 24 Mar 2022 07:00:55 GMT
+<
+* Connection #0 to host localhost left intact
+
+C:\Users\tangshu>curl -H "Authorization:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImRhbmllbGxlIn0.umxQ98tgEq8GKa7J2njjF7RMNtlWjIDfmwHQtAHGFmc" http://localhost:9090/test
+Test
+C:\Users\tangshu>
