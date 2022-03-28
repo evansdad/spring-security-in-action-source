@@ -1,0 +1,55 @@
+curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
+curl -v -XPOST -u resourceserver:resourceserversecret "http://localhost:8080/oauth/check_token?token=89fabf3b-3573-44dd-a35d-20aa321d4ed9"
+curl -H "Authorization: bearer 89fabf3b-3573-44dd-a35d-20aa321d4ed9" "http://localhost:9090/hello"
+
+
+C:\Users\tangshu>curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+* Server auth using Basic with user 'client'
+> POST /oauth/token?grant_type=password&username=john&password=12345&scope=read HTTP/1.1
+> Host: localhost:8080
+> Authorization: Basic Y2xpZW50OnNlY3JldA==
+> User-Agent: curl/7.79.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< Cache-Control: no-store
+< Pragma: no-cache
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< X-Frame-Options: DENY
+< Content-Type: application/json;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Mon, 28 Mar 2022 03:30:29 GMT
+<
+{"access_token":"89fabf3b-3573-44dd-a35d-20aa321d4ed9","token_type":"bearer","refresh_token":"9b214412-1978-4611-93df-5b37097d3899","expires_in":43199,"scope":"read"}* Connection #0 to host localhost left intact
+
+C:\Users\tangshu>curl -v -XPOST -u resourceserver:resourceserversecret "http://localhost:8080/oauth/check_token?token=89fabf3b-3573-44dd-a35d-20aa321d4ed9"
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+* Server auth using Basic with user 'resourceserver'
+> POST /oauth/check_token?token=89fabf3b-3573-44dd-a35d-20aa321d4ed9 HTTP/1.1
+> Host: localhost:8080
+> Authorization: Basic cmVzb3VyY2VzZXJ2ZXI6cmVzb3VyY2VzZXJ2ZXJzZWNyZXQ=
+> User-Agent: curl/7.79.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 28 Mar 2022 03:33:55 GMT
+<
+{"active":true,"exp":1648481429,"user_name":"john","authorities":["read"],"client_id":"client","scope":["read"]}* Connection #0 to host localhost left intact
+
+C:\Users\tangshu>curl -H "Authorization: bearer 89fabf3b-3573-44dd-a35d-20aa321d4ed9" "http://localhost:9090/hello"
+Hello!
+

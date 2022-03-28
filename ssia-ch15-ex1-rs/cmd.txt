@@ -1,0 +1,25 @@
+curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
+curl -H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDg0OTM3OTcsInVzZXJfbmFtZSI6ImpvaG4iLCJhdXRob3JpdGllcyI6WyJyZWFkIl0sImp0aSI6ImQ2YmE5ODZkLWI2ZWEtNDljMy1hY2I3LTNmZWY5OGZmYWFhMCIsImNsaWVudF9pZCI6ImNsaWVudCIsInNjb3BlIjpbInJlYWQiXX0.2575GUWTLzjr8pZB_5ssah1ads4Fb7uSsJ_m5FZNkI8" http://localhost:9090/hello
+
+C:\Users\tangshu>curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+* Server auth using Basic with user 'client'
+> POST /oauth/token?grant_type=password&username=john&password=12345&scope=read HTTP/1.1
+> Host: localhost:8080
+> Authorization: Basic Y2xpZW50OnNlY3JldA==
+> User-Agent: curl/7.79.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< Cache-Control: no-store
+< Pragma: no-cache
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< X-Frame-Options: DENY
+< Content-Type: application/json;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Mon, 28 Mar 2022 06:56:37 GMT
+<
+{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDg0OTM3OTcsInVzZXJfbmFtZSI6ImpvaG4iLCJhdXRob3JpdGllcyI6WyJyZWFkIl0sImp0aSI6ImQ2YmE5ODZkLWI2ZWEtNDljMy1hY2I3LTNmZWY5OGZmYWFhMCIsImNsaWVudF9pZCI6ImNsaWVudCIsInNjb3BlIjpbInJlYWQiXX0.2575GUWTLzjr8pZB_5ssah1ads4Fb7uSsJ_m5FZNkI8","token_type":"bearer","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJqb2huIiwic2NvcGUiOlsicmVhZCJdLCJhdGkiOiJkNmJhOTg2ZC1iNmVhLTQ5YzMtYWNiNy0zZmVmOThmZmFhYTAiLCJleHAiOjE2NTEwNDI1OTcsImF1dGhvcml0aWVzIjpbInJlYWQiXSwianRpIjoiNjFkZjU0NDMtZTM4Yy00YzI3LWFkNmMtZWUzODUyNGM2Njc3IiwiY2xpZW50X2lkIjoiY2xpZW50In0.9pBuwYXT_jkva2tN7--XMGoFcswTUS_fkbaXpTsyFaM","expires_in":43199,"scope":"read","jti":"d6ba986d-b6ea-49c3-acb7-3fef98ffaaa0"}* Connection #0 to host localhost left intact

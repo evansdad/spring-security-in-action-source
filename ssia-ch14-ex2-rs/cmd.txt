@@ -1,5 +1,5 @@
-curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
-curl -H "Authorization:Bearer 5e0a11b7-cc74-449f-9e00-78610c6ee509" "http://localhost:9090/hello"
+curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read2"
+curl -H "Authorization:Bearer e9e28cca-9fa3-4ae3-bb01-66fa3217ae44" "http://localhost:9090/hello"
 
 C:\Users\tangshu>curl -v -XPOST -u client:secret "http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read"
 *   Trying 127.0.0.1:8080...
